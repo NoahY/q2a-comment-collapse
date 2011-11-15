@@ -13,9 +13,15 @@
 				foreach ($c_list as $idx => $c_item)
 					if($idx>=qa_opt('collapse_comment_max_comments'))
 						$c_list[$idx]['classes'] = @$c_list[$idx]['classes'].' qa-comment-collapsed';
-						
+				$left = count($c_list)-qa_opt('collapse_comment_max_comments');
+				$text = str_replace('#',$left,qa_opt('collapse_comment_text'));
+				if($left == 1)
+					$text = preg_replace('|`([^/]+)/[^`]+`|','$1',$text);
+				else
+					$text = preg_replace('|`[^/]+/([^`]+)`|','$1',$text);
+				
 				$c_list[] =    array(
-					'title' => str_replace('#',count($c_list)-qa_opt('collapse_comment_max_comments'),qa_opt('collapse_comment_text')),
+					'title' => $text,
 					'url' => 'javascript:void(0)" onclick="jQuery(this).parent().siblings().show(200); jQuery(this).parent().hide(200)',
 					'classes' => 'qa-comment-collapser'
 				);

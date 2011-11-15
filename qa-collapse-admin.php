@@ -12,7 +12,7 @@
 				case 'collapse_comment_max_comments':
 					return 5;
 				case 'collapse_comment_text':
-					return 'show # more comments';
+					return 'show # more `comment/comments`';
 				default:
 					return null;
 			}
@@ -55,7 +55,7 @@
 			$fields[] = array(
 				'label' => 'Number of comments to show',
 				'tags' => 'NAME="collapse_comment_max_comments"',
-				'value' => qa_opt('collapse_max_comments'),
+				'value' => qa_opt('collapse_comment_max_comments'),
 				'type' => 'number',
 			);
 
@@ -63,7 +63,7 @@
 				'label' => 'Text to show more comments',
 				'tags' => 'NAME="collapse_comment_text"',
 				'value' => qa_opt('collapse_comment_text'),
-				'note' => '# is replaced by number of remaining comments',
+				'note' => '# is replaced by number of remaining comments, `singulartext/pluraltext` (surrounded by backticks) is replaced based on number of remaining comments',
 			);
 						
 			return array(
