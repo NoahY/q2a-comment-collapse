@@ -27,6 +27,7 @@
 			if (qa_clicked('collapse_button')) {
 				
 				qa_opt('collapse_comment_enable',(bool)qa_post_text('collapse_comment_enable'));
+				qa_opt('collapse_comment_prev',(bool)qa_post_text('collapse_comment_prev'));
 				qa_opt('collapse_comment_max_comments',(int)qa_post_text('collapse_comment_max_comments'));
 				qa_opt('collapse_comment_text',qa_post_text('collapse_comment_text'));
 				
@@ -50,6 +51,14 @@
 				'tags' => 'NAME="collapse_comment_enable"',
 				'value' => qa_opt('collapse_comment_enable'),
 				'type' => 'checkbox',
+			);
+			
+			$fields[] = array(
+				'label' => 'Collapse earlier comments',
+				'tags' => 'NAME="collapse_comment_prev"',
+				'value' => qa_opt('collapse_comment_prev'),
+				'type' => 'checkbox',
+				'note' => 'if this is checked, use something like "show # previous comments" below',
 			);
 
 			$fields[] = array(
