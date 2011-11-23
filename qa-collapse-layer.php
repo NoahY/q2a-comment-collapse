@@ -23,14 +23,16 @@
 					array_unshift($c_list, array(
 							'title' => $text,
 							'url' => 'javascript:void(0)" onclick="jQuery(this).parent().siblings().show(200); jQuery(this).parent().hide(200)',
-							'classes' => 'qa-comment-collapser'
+							'classes' => 'qa-comment-collapser',
+							'hidden' => false, 					
 						)
 					);
 				else
 					$c_list[] = array(
 						'title' => $text,
 						'url' => 'javascript:void(0)" onclick="jQuery(this).parent().siblings().show(200); jQuery(this).parent().hide(200)',
-						'classes' => 'qa-comment-collapser'
+						'classes' => 'qa-comment-collapser',
+						'hidden' => false, 					
 					);
 						
 			}
